@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_statuses",
+  "info": {
+    "singularName": "quest-status",
+    "pluralName": "quest-statuses",
+    "displayName": "QuestStatus",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "completedAt": {
+      "type": "datetime"
+    },
+    "doing": {
+      "type": "boolean"
+    },
+    "grandparent": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::app-user.app-user"
+    },
+    "tree": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tree.tree"
+    }
+  }
+}

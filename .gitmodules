@@ -1,0 +1,6 @@
+[submodule "app"]
+	path = app
+	url = git@github.com:mosamosamosamosa/cocoroiki_app.git
+[submodule "api"]
+	path = api
+	url = git@github.com:futo-nakagawa/cocoroiki_api.git
