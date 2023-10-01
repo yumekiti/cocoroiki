@@ -18,7 +18,7 @@ func NewFastapiHandler() FastapiHandler {
 	return &fastapiHandler{}
 }
 
-const FastapiURL = "http://api:8080"
+const FastapiURL = "http://cocoroiki-api:8080"
 
 func (h *fastapiHandler) GetAppUsersHandler(c echo.Context) error {
 	req, err := http.Get(FastapiURL + "/api/app-users")

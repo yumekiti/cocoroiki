@@ -21,7 +21,7 @@ func NewStrapiHandler() StrapiHandler {
 	return &strapiHandler{}
 }
 
-const StrapiURL = "http://cms:1337"
+const StrapiURL = "http://cocoroiki-cms:1337"
 
 func (h *strapiHandler) GetHandler(c echo.Context) error {
 	q := c.Request().URL.Query()
