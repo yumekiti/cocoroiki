@@ -1,0 +1,53 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cocoroiki-cms
+  namespace: cocoroiki
+spec:
+  selector:
+    app: cocoroiki-cms
+  ports:
+    - protocol: TCP
+      port: 1337
+      targetPort: 1337
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cocoroiki-bff
+  namespace: cocoroiki
+spec:
+  selector:
+    app: cocoroiki-bff-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cocoroiki-api
+  namespace: cocoroiki
+spec:
+  selector:
+    app: cocoroiki-api-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cocoroiki-db
+  namespace: cocoroiki
+spec:
+  selector:
+    app: cocoroiki-db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306

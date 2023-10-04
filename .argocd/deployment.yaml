@@ -1,0 +1,93 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cocoroiki-bff-deployment
+  namespace: cocoroiki
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cocoroiki-bff
+  template:
+    metadata:
+      labels:
+        app: cocoroiki-bff
+    spec:
+      containers:
+        - name: cocoroiki-bff
+          image: yumekiti/cocoroiki-bff:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cocoroiki-api-deployment
+  namespace: cocoroiki
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cocoroiki-api
+  template:
+    metadata:
+      labels:
+        app: cocoroiki-api
+    spec:
+      containers:
+        - name: cocoroiki-api
+          image: yumekiti/cocoroiki-api:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cocoroiki-cms-deployment
+  namespace: cocoroiki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cocoroiki-cms
+  template:
+    metadata:
+      labels:
+        app: cocoroiki-cms
+    spec:
+      containers:
+        - name: cocoroiki-cms
+          image: yumekiti/cocoroiki-cms:latest
+          ports:
+            - containerPort: 1337
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cocoroiki-db-deployment
+  namespace: cocoroiki
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cocoroiki-db
+  template:
+    metadata:
+      labels:
+        app: cocoroiki-db
+    spec:
+      containers:
+        - name: cocoroiki-db
+          image: liupeng0518/mysql:5.7-arm64
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: password
+            - name: MYSQL_DATABASE
+              value: cocoroiki
+            - name: MYSQL_USER
+              value: cocoroiki
+            - name: MYSQL_PASSWORD
+              value: password
