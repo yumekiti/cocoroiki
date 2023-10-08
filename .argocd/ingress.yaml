@@ -5,6 +5,7 @@ metadata:
   name: cocoroiki-ingress
   namespace: cocoroiki
 spec:
+  ingressClassName: nginx
   rules:
     - host: cocoroiki-bff.yumekiti.net
       http:
