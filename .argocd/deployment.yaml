@@ -91,3 +91,10 @@ spec:
               value: cocoroiki
             - name: MYSQL_PASSWORD
               value: password
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql  # MySQLデータの永続化パス
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim  # 作成した永続ボリュームクレームの名前
