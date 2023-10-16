@@ -5,9 +5,13 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 
 	"github.com/yumekiti/cocoroiki-bff/interface/handler"
+	"github.com/yumekiti/cocoroiki-bff/config"
 )
 
 func main() {
+	// Load .env file
+	config.LoadEnv()
+
 	// Handler
 	strapiHandler := handler.NewStrapiHandler()
 	fastapiHandler := handler.NewFastapiHandler()

@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/yumekiti/cocoroiki-bff/config"
 )
 
 type StrapiHandler interface {
@@ -54,6 +55,14 @@ func (h *strapiHandler) PostHandler(c echo.Context) error {
 		log.Fatal(err)
 	}
 
+	if c.Request().URL.Path == "/api/quest-statuses" {
+		data := map[string]string{"status": "false"}
+		err := config.NewPusherClient().Trigger("my-channel", "my-event", data)
+		if err != nil {
+			log.Fatal(err)
+		}
+	}
+
 	return c.JSONBlob(req.StatusCode, body)
 }
 
@@ -75,6 +84,14 @@ func (h *strapiHandler) PutHandler(c echo.Context) error {
 	body, err := ioutil.ReadAll(res.Body)
 	if err != nil {
 		log.Fatal(err)
+	}
+
+	if c.Request().URL.Path == "/api/quest-statuses" {
+		data := map[string]string{"status": "true"}
+		err := config.NewPusherClient().Trigger("my-channel", "my-event", data)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	return c.JSONBlob(res.StatusCode, body)
