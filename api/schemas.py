@@ -1,0 +1,12 @@
+from Family import schema as FamilySchema
+from AppUser import schema as AppUserSchema
+from Closeness import schema as ClosenessSchema
+from Comment import schema as CommentSchema
+from Post import schema as PostSchema
+from Profile import schema as ProfileSchema
+from Quest import schema as QuestSchema
+from QuestType import schema as QuestTypeSchema
+from Reward import schema as RewardSchema
+from Tree import schema as TreeSchema
+from Relation import schema as RelationSchema
+from TreeUser import schema as TreeUserSchema
