@@ -7,6 +7,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "name": "田中"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/families'
+echo -e "\n"
 
 # create app-users
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -20,6 +21,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "families": "1"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/app-users'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -32,6 +34,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "families": "1"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/app-users'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -44,6 +47,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "families": "1"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/app-users'
+echo -e "\n"
 
 # update families
 curl -XPUT -H "Content-type: application/json" -d '{
@@ -53,6 +57,7 @@ curl -XPUT -H "Content-type: application/json" -d '{
         "grandparents": ["3"]
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/families/1'
+echo -e "\n"
 
 # create quest_kinds
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -60,12 +65,14 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "name": "お家"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/quest-kinds'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
         "name": "お外"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/quest-kinds'
+echo -e "\n"
 
 # create quests
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -74,6 +81,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "quest_kinds": ["2"]
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/quests'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -81,6 +89,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "quest_kinds": ["1"]
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/quests'
+echo -e "\n"
 
 # create rewards
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -92,6 +101,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "おかね"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -102,6 +112,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "おやつ"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -112,6 +123,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "おかね"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -122,6 +134,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "スイーツ"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -132,6 +145,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "おやつ"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -142,6 +156,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "おかね"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -152,6 +167,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "スイーツ"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 curl -XPOST -H "Content-type: application/json" -d '{
     "data": {
@@ -162,6 +178,7 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "kinds": "おもちゃ"
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/rewards'
+echo -e "\n"
 
 # create trees
 curl -XPOST -H "Content-type: application/json" -d '{
@@ -172,3 +189,84 @@ curl -XPOST -H "Content-type: application/json" -d '{
         "grandparent": ["3"]
     }
 }' 'https://cocoroiki-strapi.yumekiti.net/api/trees'
+echo -e "\n"
+
+# create comments
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "content": "よかったです。\nまたお話しようね。",
+        "user": "1"
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/comments'
+echo -e "\n"
+
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "content": "がんばってね。\nまた会いに来てください。",
+        "user": "1"
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/comments'
+echo -e "\n"
+
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "content": "楽しそう！\nまた夏休みに遊びにいくね！",
+        "user": "1"
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/comments'
+echo -e "\n"
+
+curl -XPUT -H "Content-type: application/json" -d '{
+    "data": {
+        "comments": ["3"]
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/comments/2'
+echo -e "\n"
+
+# create post
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "user": "1",
+        "content": "ゆうとが英会話を習い始めました。とても楽しそうに通ってます。おすすめしてくれてありがとう。",
+        "kids": ["2"],
+        "comments": ["2"],
+        "app_users": ["1", "3"]
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/posts'
+echo -e "\n"
+
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "user": "1",
+        "content": "海に行きました。ゆうとがとても楽しそうにしていました。",
+        "kids": ["2"],
+        "comments": ["3"],
+        "app_users": ["1", "3"]
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/posts'
+echo -e "\n"
+
+# create quest_status
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "grandparent": "3",
+        "tree": "1"
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/quest-statuses'
+echo -e "\n"
+
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "completedAt": "2023-08-31",
+        "tree": "1"
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/quest-statuses'
+echo -e "\n"
+
+curl -XPOST -H "Content-type: application/json" -d '{
+    "data": {
+        "completedAt": "2023-08-31",
+        "tree": "1"
+    }
+}' 'https://cocoroiki-strapi.yumekiti.net/api/quest-statuses'
+echo -e "\n"
