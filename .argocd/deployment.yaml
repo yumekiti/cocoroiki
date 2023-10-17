@@ -92,6 +92,9 @@ spec:
             - name: MYSQL_PASSWORD
               value: password
           volumeMounts:
+            - name: mysql-config-volume
+              mountPath: /etc/mysql/my.cnf
+              subPath: my.cnf
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql  # MySQLデータの永続化パス
       volumes:
