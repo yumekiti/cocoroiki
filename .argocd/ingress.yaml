@@ -10,13 +10,6 @@ spec:
     - host: cocoroiki-bff.yumekiti.net
       http:
         paths:
-          - path: /uploads
-            pathType: Prefix
-            backend:
-              service:
-                name: cocoroiki-cms
-                port:
-                  number: 1337
           - path: /
             pathType: Prefix
             backend:
@@ -24,6 +17,13 @@ spec:
                 name: cocoroiki-bff
                 port:
                   number: 8080
+          - path: /uploads
+            pathType: Prefix
+            backend:
+              service:
+                name: cocoroiki-cms
+                port:
+                  number: 1337
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
