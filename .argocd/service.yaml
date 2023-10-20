@@ -16,11 +16,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cocoroiki-bff
+  name: bff-service
   namespace: cocoroiki
 spec:
   selector:
-    app: cocoroiki-bff
+    app: bff
   ports:
     - protocol: TCP
       port: 8080
