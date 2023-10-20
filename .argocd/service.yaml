@@ -20,7 +20,7 @@ metadata:
   namespace: cocoroiki
 spec:
   selector:
-    app: cocoroiki-bff-deployment
+    app: cocoroiki-bff
   ports:
     - protocol: TCP
       port: 8080
@@ -33,7 +33,7 @@ metadata:
   namespace: cocoroiki
 spec:
   selector:
-    app: cocoroiki-api-deployment
+    app: cocoroiki-api
   ports:
     - protocol: TCP
       port: 8080
